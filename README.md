@@ -1,10 +1,10 @@
 # iwt: I Wish To...
 
-A cli pipeline helper tool, backed by openai, inspired by `rg`, `jq`, etc. But you know .... magic instead of science. Make a wish!
+> A cli pipeline helper tool, backed by openai, inspired by `rg`, `jq`, etc. But you know .... magic instead of science. Make a wish!
 
 This is currently using the OpenAI API. I don't have access to GPT-4 API yet, so this is using `gpt-3.5-turbo-16k`. Eventually that should be configurable, and even cooler would be to support alternate APIs or local models. Let's see if we can get it working at all first though, k?
 
-# Usage
+## Usage
 
 First, set up your OpenAI API key:
 
@@ -14,13 +14,11 @@ export OPENAI_API_KEY=yourkeyhere
 
 Generally: `<some command> | iwt <some wish> | <some other command>`
 
-```
-curl https://news.ycombinator.com | iwt turn this into a csv of articles with title, domain name, link, points > out.csv
-```
+Example: `curl https://news.ycombinator.com | iwt turn this into a csv of articles with title, domain name, link, points > out.csv`
 
 That should output a csv with a row for each article and a title, domain name, link, and points. Yup. Like magic.
 
-# Concept / Ideas
+## Concept / Ideas
 
 * Data input from STDIN
 * Data output to STDOUT
@@ -31,7 +29,7 @@ That should output a csv with a row for each article and a title, domain name, l
 * Warn (again, via TTY) for LARGE input?
 * Progress via STDERR
 
-# References, Simlar Things, Cool Stuff
+## References, Simlar Things, Cool Stuff
 
 * [Initial source used from async-openai chat example (MIT)](https://github.com/64bit/async-openai)
 * [plz is a universal CLI tool that converts plain-English into an executable command.](https://plz.software/)
