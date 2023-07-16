@@ -1,16 +1,18 @@
-# Halp!
+# iwt: I Wish To...
 
-A cli pipeline helper tool, backed by openai, inspired by `rg`, `jq`, etc.
+A cli pipeline helper tool, backed by openai, inspired by `rg`, `jq`, etc. But like .... magic instead of science.
 
 # Usage
 
 (This is pretend until I get it to work)
 
+Generally: `<some command> | iwt <some wish> | <some other command>`
+
 ```
-curl https://news.ycombinator.com | halp turn this into a csv of articles with title, domain name, link, points > out.csv
+curl https://news.ycombinator.com | iwt turn this into a csv of articles with title, domain name, link, points > out.csv
 ```
 
-That should output .... a csv with a row for each article and a title, domain name, link, and points. Yup.
+That should output .... a csv with a row for each article and a title, domain name, link, and points. Yup. Like magic.
 
 # Concept / Ideas
 

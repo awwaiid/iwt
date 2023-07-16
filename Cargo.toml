@@ -1,9 +1,10 @@
 [package]
-name = "chat"
+name = "iwt"
 version = "0.1.0"
 edition = "2021"
 publish = false
 
 [dependencies]
-async-openai = {path = "../../async-openai"}
+async-openai = "*"
 tokio = { version = "1.25.0", features = ["full"] }
+reqwest = "*"
