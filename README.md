@@ -6,6 +6,12 @@ This is currently using the OpenAI API. I don't have access to GPT-4 API yet, so
 
 # Usage
 
+First, set up your OpenAI API key:
+
+```sh
+export OPENAI_API_KEY=yourkeyhere
+```
+
 Generally: `<some command> | iwt <some wish> | <some other command>`
 
 ```
@@ -22,6 +28,8 @@ That should output a csv with a row for each article and a title, domain name, l
 * Either explicit or implicit row-based processing. Maybe we should take the first chunk of data and ask the AI if it should be row based or not?
 * Use TTY for additional guidance from the operator?
 * Break long input into batches within token/context limits
+* Warn (again, via TTY) for LARGE input?
+* Progress via STDERR
 
 # References, Simlar Things, Cool Stuff
 
