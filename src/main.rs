@@ -49,7 +49,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let response = client.chat().create(request).await?;
 
-    println!("\nResponse:\n");
     for choice in response.choices {
         // eprintln!(
         //     "{}: Role: {}  Content: {:?}",
