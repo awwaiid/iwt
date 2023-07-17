@@ -4,13 +4,23 @@
 
 This is currently using the OpenAI API. I don't have access to GPT-4 API yet, so this is using `gpt-3.5-turbo-16k`. Eventually that should be configurable, and even cooler would be to support alternate APIs or local models. Let's see if we can get it working at all first though, k?
 
-## Usage
+## Installation
 
-First, set up your OpenAI API key:
+Three choices for installation:
+
+* Clone repo and build yourself with `cargo build`
+* Install from crates.io with `cargo install iwt`
+* [Download the latest binary from github releases](https://github.com/awwaiid/iwt/releases/latest)
+
+Next, set up your OpenAI API key:
 
 ```sh
 export OPENAI_API_KEY=yourkeyhere
 ```
+
+Put that into your `~/.zshrc` or whatnot.
+
+## Usage
 
 Generally: `<some command> | iwt <some wish> | <some other command>`
 
@@ -28,6 +38,7 @@ That should output a csv with a row for each article and a title, domain name, l
 * Break long input into batches within token/context limits
 * Warn (again, via TTY) for LARGE input?
 * Progress via STDERR
+* Select some next in vim and pipe it through `iwt`
 
 ## References, Simlar Things, Cool Stuff
 
