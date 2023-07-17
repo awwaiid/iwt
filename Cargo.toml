@@ -2,7 +2,14 @@
 name = "iwt"
 version = "0.1.0"
 edition = "2021"
-publish = false
+authors = ["Brock Wilcox <awwaiid@thelackthereof.org>"]
+license = "MIT"
+description = "I Wish To.... transform piped data using OpenAI GPT API LLM"
+readme = "README.md"
+homepage = "https://github.com/awwaiid/iwt"
+repository = "https://github.com/awwaiid/iwt"
+keywords = ["cli", "llm", "openai", "gpt"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 async-openai = "*"

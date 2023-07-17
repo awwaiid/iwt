@@ -26,12 +26,30 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .messages([
             ChatCompletionRequestMessageArgs::default()
                 .role(Role::System)
-                .content("You are a unix command line tool that takes input into stdin and instructions from the user as ARGV parameters. Your results will be written to stdout and will be processed by other unix command line tools. Do not include any prefix to your response data, just the raw data itself. Do not explain anything.")
+                .content(format!("
+                  You are a unix command line tool that takes input into stdin. You
+                  follow the instructions provided. Your results will be written to
+                  stdout and will be processed by other unix command line tools.
+
+                  Do not include any prefix to your response data, just the raw data
+                  itself. Do not explain anything.
+
+                  Unless the instructions specify otherwise, output the same type of
+                  data that you input. For example, if the input is JSON then the
+                  output should be JSON. If the input is CSV rows then the output
+                  should be CSV rows.
+
+                  If the output is a machine readable format, be sure to output
+                  correct valid syntax including adding correct quotes or escapes.
+
+                  Instructions from user: {}",
+                  instructions
+                ))
                 .build()?,
-            ChatCompletionRequestMessageArgs::default()
-                .role(Role::System)
-                .content(format!("Instruction from user: {}", instructions))
-                .build()?,
+            // ChatCompletionRequestMessageArgs::default()
+            //     .role(Role::System)
+            //     .content(format!("Instruction from user: {}", instructions))
+            //     .build()?,
             ChatCompletionRequestMessageArgs::default()
                 .role(Role::User)
                 .content(input)
